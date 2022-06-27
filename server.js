@@ -4,7 +4,7 @@ require("console.table");
 const connection = require("./db/connection");
 
 
-//main startinf function of program
+//main starting function of program
 function runDatabase() {
 inquirer
     .prompt([
