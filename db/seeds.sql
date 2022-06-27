@@ -1,24 +1,18 @@
-INSERT INTO departments (department_name)
-    VALUES 
-        ('Administraion'), 
-        ('Fleet'), 
-        ('Billing');
+-- department seeds 
+INSERT INTO department (id, name) 
+VALUES
+(7, 'Engineering'),
+(8, 'Sales'),
+(9, 'Finance');
 
-INSERT INTO roles (title, salary, department_id)
-    VALUES 
-        ('CEO', 150000.00, 1), 
-        ('Fleet Manager', 90000.00, 2), 
-        ('Billing Manager', 90000.00, 3), 
-        ('Technician', 75000.00, 2), 
-        ('Operator', 75000.00, 3);
+-- role seeds 
+INSERT INTO role (title, salary, departmentID) 
+VALUES 
+("Lead Engineer", 150000, 7),
+("Engineer", 100000, 7),
+("Manager", 130000, 8);
 
-INSERT INTO employees (first_name, last_name, role_id)
-    VALUES 
-        ('John', 'Doe', 1),
-        ('Jane', 'Doe', 2),
-        ('Bill', 'Doe', 3);
-
-INSERT INTO employees (first_name, last_name, role_id, manager_id)
-    VALUES        
-        ('Hello', 'World', 4, 2),
-        ('Good', 'Evening', 5, 3);
+INSERT INTO employees (firstName, lastName, role, managerID)
+VALUES
+("John", "Doe", "Intern", 1),
+("Jane", "Doe", "Apprenctice", 2);
