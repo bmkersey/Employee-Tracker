@@ -14,6 +14,7 @@
   * [Contribution](#contribution)
   * [Tests](#tests)
   * [Questions](#questions)
+  * [Walkthrough](#walkthrough)
   
   ## Installation
 
@@ -40,6 +41,9 @@
   ## Questions
   Questions? Comments? Concerns? Feel free to reach out!  
   Email: bmkersey@gmail.com  
-  GitHub: [bmkersey](https://github.com/bmkersey)  
+  GitHub: [bmkersey](https://github.com/bmkersey) 
+
+  ## Walkthrough 
+  Walk-through: [Watch Here](https://drive.google.com/file/d/1o6IOaDUtQWtBMaBJL09PuLwufj_6Yebr/view)
   
   
