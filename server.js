@@ -99,7 +99,7 @@ function addDepartment() {
         message: "What is the new Department ID number? ",
         validate: userInput => {
 
-          // using isNaN to validate if the value is a number 
+          // user input validation
           if (isNaN(userInput)) {
             console.log("Please enter the new Department ID number")
             return false;
@@ -110,7 +110,7 @@ function addDepartment() {
       },
     ])
     .then((answers) => {
-      // inserting the following key value pairs into the table
+      // insert into table
       connection.query(
         "INSERT INTO department SET ? ",
         {
@@ -127,9 +127,9 @@ function addDepartment() {
       );
     });
 }
-// DEPARTMENTS SECTION END
 
-// ROLES SECTION
+
+// Roles functions
 function viewAllRoles() {
   connection.query("SELECT * FROM role;",
     function (err, res) {
@@ -143,7 +143,7 @@ function viewAllRoles() {
 // Adding Roles functions
 
 function addRole() {
-  // inserting the following key value pairs into the table
+  // insert into table
   connection.query(
     "SELECT role.title AS Title, role.salary AS Salary FROM role LEFT JOIN department.name AS Department FROM department;",
     function (err, res) {
@@ -168,7 +168,7 @@ function addRole() {
             message: "What is the salary of the new role?",
             validate: userInput => {
 
-              // using isNaN to validate if the value is a number 
+              // input validation 
               if (isNaN(userInput)) {
                 console.log("Please enter the salary of the new role")
                 return false;
@@ -183,7 +183,7 @@ function addRole() {
             message: "What is the department id number?",
             validate: userInput => {
 
-              // using isNaN to validate if the value is a number 
+              // input validation
               if (isNaN(userInput)) {
                 console.log("Please enter the Department ID number")
                 return false;
@@ -199,10 +199,10 @@ function addRole() {
             `INSERT INTO role (title, salary, departmentID) 
           VALUES (?, ?, ?)`,
 
-            // values getting inserted
+            // insert these
             [answer.title, answer.salary, answer.deptID],
 
-            // function to catch errors/ store the answers into table/ invoke runDatabase when finished
+            // error catching and return to start
             (err, res) => {
               if (err) throw err;
               console.table(answer);
@@ -213,9 +213,9 @@ function addRole() {
     }
   );
 }
-// ROLES SECTION END
 
-// EMPLOYEE SECTION 
+
+// Employees section
 
 function addEmployee() {
   inquirer.prompt([
@@ -265,7 +265,7 @@ function addEmployee() {
       message: "Who is managing the new employee? 1. Tom or 2. John: ",
       validate: userInput => {
 
-        // using isNaN to validate if the value is a number 
+        // input validation 
         if (isNaN(userInput)) {
           console.log("Please enter the ID number of the manager")
           return false;
