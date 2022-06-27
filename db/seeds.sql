@@ -8,9 +8,9 @@ VALUES
 -- role seeds 
 INSERT INTO role (title, salary, departmentID) 
 VALUES 
-("Lead Engineer", 150000, 7),
+("Lead Engineer", 100000, 7),
 ("Engineer", 100000, 7),
-("Manager", 130000, 8);
+("Manager", 200000, 8);
 
 INSERT INTO employees (firstName, lastName, role, managerID)
 VALUES

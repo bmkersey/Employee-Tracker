@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-require("console.table");
+const cTable = require("console.table");
 // creates a promise with this imported file
 const connection = require("./db/connection");
 
@@ -70,9 +70,6 @@ function viewAllDepts() {
     "SELECT department.id AS ID, department.name AS Department FROM department",
     function (err, res) {
       if (err) throw err;
-      console.log("-----------------------");
-      console.log("*** DEPARTMENT LIST ***");
-      console.log("-----------------------");
       console.table(res);
       runDatabase();
     }
@@ -137,9 +134,6 @@ function viewAllRoles() {
   connection.query("SELECT * FROM role;",
     function (err, res) {
       if (err) throw err;
-      console.log("------------------");
-      console.log("*** ROLE LIST ***");
-      console.log("------------------");
       console.table(res);
       runDatabase();
     }
